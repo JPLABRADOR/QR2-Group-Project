@@ -210,5 +210,5 @@ module.exports = [
         actorPageHeaderText: "Harry Waters Jr.: Marvin Berry",
         poster: "@mainPagePoster",
         posterTitle: "Back to the Future Poster"
-    },
+    }
 ]
