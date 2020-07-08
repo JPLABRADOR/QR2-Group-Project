@@ -7,7 +7,6 @@ module.exports ={
    beforeEach: browser =>{
        iObjects = browser.page.imdbObjects()
        iObjects.maximizeWindow()
-       iObjects.navigate()
    },
    afterEach: browser =>{
        browser.end
@@ -21,7 +20,7 @@ module.exports ={
                .verifyPage(test)
        })
    },
- 
+
    'BTS Menu Test': browser => {
        iObjects.btfMenuTest()
    }

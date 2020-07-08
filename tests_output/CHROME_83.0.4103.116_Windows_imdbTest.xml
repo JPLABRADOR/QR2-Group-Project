@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
-            tests="1">
+            failures="1"
+            tests="2">
 
   <testsuite name="imdbTest"
-    errors="0" failures="0" hostname="" id="" package="imdbTest" skipped="0"
-    tests="1" time="6.175" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="imdbTest" skipped="1"
+    tests="2" time="31.33" timestamp="">
   
-    <testcase name="Search Test" classname="imdbTest" time="6.175" assertions="2">
+    <testcase name="Search Test" classname="imdbTest" time="10.93" assertions="2">
 
     
+
+    
+    </testcase>
+  
+    <testcase name="Test - Verify Cast Section" classname="imdbTest" time="20.40" assertions="17">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Verified: @crispinGloverPageHeader page header visible - expected &#34;visible&#34; but got: &#34;not found&#34; (5489ms)">    at Page.verifyPage (C:\Users\emont\Documents\Devmountain\QR2-Group-Project\pageObjects\imdbObjects.js:16:14)
+    at C:\Users\emont\Documents\Devmountain\QR2-Group-Project\tests\imdbTest.js:20:17
+    at Array.forEach (&lt;anonymous&gt;)
+    at Object.Test - Verify Cast Section (C:\Users\emont\Documents\Devmountain\QR2-Group-Project\tests\imdbTest.js:18:18)</failure>
 
     
     </testcase>
@@ -19,6 +59,13 @@
 
     
 
+  
+    
+    <testcase
+      name="BTS Menu Test" classname="imdbTest">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>
