@@ -21,14 +21,57 @@ var imdbCommands = {
             .verify.attributeContains(data.poster, 'title', data.posterTitle, "Verified: Back to the Future Page")
         return this
     },
-}
 
-module.exports = {
+  
+    btfMenuTest: function(data) {
+        this
+            .navigate('https://www.imdb.com/title/tt0088763/?ref_=ttfc_fc_tt')
+            .click('@castAndCrew')
+            .verify.containsText('body', 'Full Cast & Crew')
+            .click('a[href="/title/tt0088763/?ref_=ttfc_fc_tt"]')
+            .click('@trivia')
+            .verify.containsText('body', 'Trivia')
+            .click('a[href="/title/tt0088763/?ref_=tttr_tr_tt"]')
+            .click('@userReviews')
+            .verify.containsText('body', 'User Reviews')
+            .click('a[href="/title/tt0088763/?ref_=tt_urv"]')
+            .click('@imdbPRO')
+            .verify.containsText('@verifyIMDbPro', "IMDbPro")
+            .navigate('https://www.imdb.com/title/tt0088763/?ref_=ttfc_fc_tt')
+            .click('@more')
+            .verify.containsText('body', 'DETAILS')
+            .verify.containsText('body', 'STORYLINE')
+            .verify.containsText('body', 'RELATED ITEMS')
+            .verify.containsText('body', 'OPINION')
+            .verify.containsText('body', 'PHOTO & VIDEO')
+            .verify.containsText('body', 'DID YOU KNOW?')
+            .click('@less')
+        return this
+ },
+ }
+  
+ module.exports = {
     url: 'https://www.imdb.com/',
     commands: [imdbCommands],
     elements:{
         searchBar: 'input[name="q"]',
         submit: 'button[type="submit"]',
+        castAndCrew: 'a[href="/title/tt0088763/fullcredits?ref_=tt_ql_1"]',
+        trivia: 'a[href="/title/tt0088763/trivia?ref_=tt_ql_2"]',
+        userReviews: 'a[href="/title/tt0088763/reviews?ref_=tt_ql_3"]',
+        more: 'span[class="titleOverviewSprite quicklinksArrowUp"]',
+        less: 'span[class="titleOverviewSprite quicklinksArrowDown"]',
+  
+        imdbPRO: {
+            selector: '//a[contains(text(), "IMDbPro")]',
+            locateStrategy: 'xpath'
+        },
+  
+        verifyIMDbPro: {
+            selector: '//p[contains(text(), "IMDbPro")]',
+            locateStrategy: 'xpath'
+        },
+  
         firstResult: {
             selector: '(//td[@class="result_text"]/a)[1]',
             locateStrategy: 'xpath'
@@ -36,7 +79,7 @@ module.exports = {
         title:{
             selector: '//div[@class="title_wrapper"]/h1',
             locateStrategy: 'xpath'
-
+  
         },
         castSectionHeader: {
             selector: "//h2[contains(text(),'Cast')]",
@@ -166,7 +209,7 @@ module.exports = {
             selector: "//h1[@class='header']//span[contains(text(),'Harry Waters Jr.')]",
             locateStrategy: 'xpath'
         },
-
+  
         // Characters
         martyMcFly: {
             selector: "//tr[@class='odd']//a[contains(text(),'Marty McFly')]",
@@ -288,8 +331,7 @@ module.exports = {
             selector: "//h1[contains(text(),'Harry Waters Jr.: Marvin Berry')]",
             locateStrategy: 'xpath'
         },
-
-
     }
-
-}
+  
+ }
+ 
