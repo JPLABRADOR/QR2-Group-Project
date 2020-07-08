@@ -21,6 +21,7 @@ var imdbCommands = {
             .verify.attributeContains(data.poster, 'title', data.posterTitle, "Verified: Back to the Future Page")
         return this
     },
+
   
     btfMenuTest: function(data) {
         this
@@ -330,8 +331,6 @@ var imdbCommands = {
             selector: "//h1[contains(text(),'Harry Waters Jr.: Marvin Berry')]",
             locateStrategy: 'xpath'
         },
-  
-  
     }
   
  }
