@@ -1,19 +1,32 @@
+var iObjects = {}
+var actorData = require('../pageAssets/backToTheFutureArray'),
 var array = require('../pageAssets/imdbAssestsTrevor')
-var future = {}
-module.exports = {
-    before: browser => {
-        future = browser.page.imdbObjects()
-        future 
-            .navigate()
-            .maximizeWindow()
-    },
-    after: browser => {
-        browser.end()
-    },
 
-    'Future Test': browser =>{
+ 
+ 
+module.exports ={
+   beforeEach: browser =>{
+       iObjects = browser.page.imdbObjects()
+       iObjects.maximizeWindow()
+   },
+   afterEach: browser =>{
+       browser.end
+   },
+   'Search Test': browser => {
+       iObjects.searchTest()
+   },
+   'Test - Verify Cast Section': browser => {
+       actorData.forEach(test => {
+           iObjects
+               .verifyPage(test)
+       })
+   },
+   'BTS Menu Test': browser => {
+       iObjects.btfMenuTest()
+   },
+  'Future Test': browser =>{
         array.forEach(test => {
-            future.futurE(test)
+            iObjects.futurE(test)
         })
-    },
+    }
 }
