@@ -5,6 +5,7 @@ module.exports = {
         GroupProject = browser.page.AdrianGroupProjectPageObjects()
         GroupProject
             .navigate()
+            .maximizeWindow()
     },
     "Videos and Photos": browser=>{
         GroupProject

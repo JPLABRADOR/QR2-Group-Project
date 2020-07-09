@@ -32,7 +32,7 @@ var Group = {
         .verify.urlEquals(asset.verifyVideo5)
         .click('@backButton')
         .click('@BacktotheFuturehome1')
-        .click('@seeAllPhotos')
+        .navigate('https://www.imdb.com/title/tt0088763/mediaindex?ref_=tt_pv_mi_sm')
         .verify.containsText('@VerifySeeAllPhotos', asset.verifyPG)
         .click('@stillFrameFilter')
         .verify.containsText('@currentFilterVerify', asset.verifySF)
@@ -76,36 +76,36 @@ module.exports = {
         video5: 'img[viconst="vi252380953"]',
         backButton: 'a[aria-label="Back"]',
         seeAllPhotos: {
-            selector: '//a[contains(text(),"351 photos")]',
+            selector: '(//div[@id="titleImageStrip"]/*/a)[8]',
             locateStrategy: 'xpath'
         },
         VerifySeeAllPhotos: 'h1[class="header"]',
         stillFrameFilter: {
-            selector: '//a[contains(text(),"Still Frame")]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[1]',
             locateStrategy: 'xpath'
         },
         eventFilter: {
-            selector: '//a[contains(text(),"Event")]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[2]',
             locateStrategy: 'xpath'
         },
         posterFilter: {
-            selector: '(//a[contains(text(),"Poster")])[1]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[3]',
             locateStrategy: 'xpath'
         },
         productFilter: {
-            selector: '(//a[contains(text(),"Product")])[1]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[4]',
             locateStrategy:'xpath'
         },
         publicityFilter: {
-            selector: '//a[contains(text(),"Publicity")]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[5]',
             locateStrategy: 'xpath'
         },
         behindTheScenesFilter: {
-            selector: '//a[contains(text(),"Behind")]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[6]',
             locateStrategy: 'xpath'
         },
         productionArtFilter: {
-            selector: '//a[contains(text(),"Production Art")]',
+            selector: '(//div[@id="media_index_type_filters"]/ul/li/a)[7]',
             locateStrategy: 'xpath'
         },
         currentFilterVerify: 'span[id="current_filter"]',
