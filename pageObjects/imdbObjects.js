@@ -1,3 +1,4 @@
+
 var imdbCommands = {
     searchTest: function(data){
         this
@@ -21,6 +22,13 @@ var imdbCommands = {
             .verify.attributeContains(data.poster, 'title', data.posterTitle, "Verified: Back to the Future Page")
         return this
     },
+    futurE: function(data){
+        this
+            .navigate('https://www.imdb.com/title/tt0088763/?ref_=fn_al_tt_1')
+            .expect.element(data.sect).text.contain(data.ttl)
+        return this
+    }
+}
 
   
     btfMenuTest: function(data) {
@@ -331,7 +339,43 @@ var imdbCommands = {
             selector: "//h1[contains(text(),'Harry Waters Jr.: Marvin Berry')]",
             locateStrategy: 'xpath'
         },
+      title: 'h1',
+        vid: {
+            selector: '(//*[h2])[3]',
+            locateStrategy: 'xpath'
+        },
+        pho: {
+            selector: '(//*[h2])[4]',
+            locateStrategy: 'xpath'
+        },
+        cast: {
+            selector: '(//*[h2])[5]',
+            locateStrategy: 'xpath'
+        },
+        mLT: {
+            selector: '(//*[h2])[6]',
+            locateStrategy: 'xpath'
+        },
+        stryL: {
+            selector: '(//*[h2])[7]',
+            locateStrategy: 'xpath'
+        },
+        dYK: {
+            selector: '(//*[h2])[8]',
+            locateStrategy: 'xpath'
+        },
+        uR: {
+            selector: '(//*[h2])[9]',
+            locateStrategy: 'xpath'
+        },
+        fAQ: {
+            selector: '(//*[h2])[10]',
+            locateStrategy: 'xpath'
+        },
+        deets: {
+            selector: '(//*[h2])[11]',
+            locateStrategy: 'xpath'
+        },
     }
   
  }
- 
