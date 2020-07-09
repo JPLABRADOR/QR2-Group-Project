@@ -22,6 +22,9 @@ module.exports ={
                .verifyPage(test)
        })
    },
+   "Menu Test": browser =>{
+       iObjects.btfMenuTest()
+   },
     'Future Test': browser =>{
         tArray.forEach(test => {
             iObjects.futurE(test)
