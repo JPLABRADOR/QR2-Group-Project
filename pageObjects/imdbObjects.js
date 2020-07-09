@@ -1,4 +1,3 @@
-
 var imdbCommands = {
     searchTest: function(data){
         this
@@ -24,14 +23,11 @@ var imdbCommands = {
     },
     futurE: function(data){
         this
-            .navigate('https://www.imdb.com/title/tt0088763/?ref_=fn_al_tt_1')
             .expect.element(data.sect).text.contain(data.ttl)
         return this
-    }
-}
-
-  
-    btfMenuTest: function(data) {
+    },
+    
+    btfMenuTest: function(data){
         this
             .navigate('https://www.imdb.com/title/tt0088763/?ref_=ttfc_fc_tt')
             .click('@castAndCrew')
@@ -46,6 +42,7 @@ var imdbCommands = {
             .click('@imdbPRO')
             .verify.containsText('@verifyIMDbPro', "IMDbPro")
             .navigate('https://www.imdb.com/title/tt0088763/?ref_=ttfc_fc_tt')
+            .pause('2000')
             .click('@more')
             .verify.containsText('body', 'DETAILS')
             .verify.containsText('body', 'STORYLINE')

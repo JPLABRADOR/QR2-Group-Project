@@ -1,5 +1,5 @@
 var iObjects = {}
-var actorData = require('../pageAssets/backToTheFutureArray'),
+var actorData = require('../pageAssets/backToTheFutureArray')
 var array = require('../pageAssets/imdbAssestsTrevor')
 
  
@@ -24,7 +24,7 @@ module.exports ={
    'BTS Menu Test': browser => {
        iObjects.btfMenuTest()
    },
-  'Future Test': browser =>{
+    'Future Test': browser =>{
         array.forEach(test => {
             iObjects.futurE(test)
         })
