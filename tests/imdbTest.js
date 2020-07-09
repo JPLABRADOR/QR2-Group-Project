@@ -1,6 +1,7 @@
 var iObjects = {}
 var actorData = require('../pageAssets/backToTheFutureArray')
-var array = require('../pageAssets/imdbAssestsTrevor')
+var tArray = require('../pageAssets/imdbAssestsTrevor')
+var aArray = require('../pageAssets/AdrianGroupArray')
 
  
  
@@ -21,12 +22,12 @@ module.exports ={
                .verifyPage(test)
        })
    },
-   'BTS Menu Test': browser => {
-       iObjects.btfMenuTest()
-   },
     'Future Test': browser =>{
-        array.forEach(test => {
+        tArray.forEach(test => {
             iObjects.futurE(test)
         })
-    }
+    },
+    "Videos and Photos": browser=>{
+        iObjects.AdrianPart(aArray)
+    },
 }
