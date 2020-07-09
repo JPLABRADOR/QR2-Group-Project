@@ -1,5 +1,5 @@
 var GroupProject = {}
-var asset = require('../codeAbstact/AdrianGroupArray')
+var asset = require('../pageAssets/AdrianGroupArray')
 module.exports = {
     beforeEach: browser => {
         GroupProject = browser.page.AdrianGroupProjectPageObjects()
